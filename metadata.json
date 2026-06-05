@@ -1,0 +1,6 @@
+{
+  "name": "AI Portfolio Copilot",
+  "description": "A smart, client-facing career profile with an interactive AI-generated Q&A layer grounded in real portfolio data.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
