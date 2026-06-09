@@ -141,25 +141,25 @@ Ground truth portfolio data has been securely loaded into my system instructions
   };
 
   return (
-    <div id="ai-chat-widget" className="flex flex-col h-full bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden">
+    <div id="ai-chat-widget" className="flex flex-col h-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-2xl shadow-sm overflow-hidden transition-colors duration-300">
       
       {/* Copilot Header */}
-      <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 bg-slate-50/50">
+      <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50 transition-colors">
         <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-600 shadow-sm text-white">
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-rose-600 dark:bg-rose-500 shadow-sm text-white">
             <Sparkles className="w-4 h-4 animate-pulse" />
           </div>
           <div>
-            <h3 className="text-sm font-bold font-display text-slate-900 flex items-center gap-1.5 leading-none">
+            <h3 className="text-sm font-bold font-display text-slate-900 dark:text-white flex items-center gap-1.5 leading-none transition-colors">
               AI Career Copilot
             </h3>
-            <span className="text-[10px] font-mono text-emerald-600 font-medium">Grounded Context Engine v1.0</span>
+            <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-medium transition-colors">Grounded Context Engine v1.0</span>
           </div>
         </div>
         
         <button 
           onClick={clearChat}
-          className="text-xs font-medium font-sans text-slate-500 hover:text-rose-600 px-2 py-1 rounded bg-white border border-slate-250 hover:bg-slate-50 transition"
+          className="text-xs font-medium font-sans text-slate-500 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 px-2 py-1 rounded bg-white dark:bg-slate-800 border border-slate-250 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition"
           id="clear-chat-btn"
         >
           Reset Chat
@@ -167,40 +167,40 @@ Ground truth portfolio data has been securely loaded into my system instructions
       </div>
 
       {/* Main Container - Chat content OR API Key Alert */}
-      <div className="flex-1 flex flex-col min-h-0 bg-slate-50/20">
+      <div className="flex-1 flex flex-col min-h-0 bg-slate-50/20 dark:bg-slate-950/20 transition-colors">
         {errorMessage === "GEMINI_KEY_MISSING" ? (
           <div className="p-6 flex-1 flex flex-col justify-center items-center text-center space-y-4" id="missing-key-card">
-            <div className="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-200">
+            <div className="w-12 h-12 rounded-full bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center border border-amber-200 dark:border-amber-900/50">
               <AlertCircle className="w-6 h-6 animate-bounce" />
             </div>
             
             <div className="space-y-2 max-w-sm">
-              <h4 className="font-bold text-slate-900 font-display">
+              <h4 className="font-bold text-slate-900 dark:text-white font-display">
                 GEMINI_API_KEY Required
               </h4>
-              <p className="text-xs text-slate-500 font-sans leading-relaxed">
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
                 The Career Copilot relies on the Gemini API to analyze Kartikey's portfolio. Since you are running in AI Studio, you must provide your own API Key.
               </p>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl p-4 text-left max-w-xs text-[11px] text-slate-600 space-y-2.5 font-sans leading-relaxed shadow-xs">
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 text-left max-w-xs text-[11px] text-slate-600 dark:text-slate-300 space-y-2.5 font-sans leading-relaxed shadow-xs transition-colors">
               <div className="flex gap-2">
-                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center">1</span>
+                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-center">1</span>
                 <span>Open the **Secrets** panel in the AI Studio editor sidebar.</span>
               </div>
               <div className="flex gap-2">
-                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-slate-100 text-slate-705 font-bold flex items-center justify-center">2</span>
+                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-705 dark:text-slate-300 font-bold flex items-center justify-center">2</span>
                 <span>Enable or add a key named **GEMINI_API_KEY** with your Gemini developer token.</span>
               </div>
               <div className="flex gap-2">
-                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-slate-100 text-slate-705 font-bold flex items-center justify-center">3</span>
+                <span className="flex-shrink-0 w-4 h-4 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-705 dark:text-slate-300 font-bold flex items-center justify-center">3</span>
                 <span>Click the button below to recognize the config setup.</span>
               </div>
             </div>
 
             <button
               onClick={() => handleSendMessage("Checking key connection...")}
-              className="flex items-center gap-2 px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs font-semibold shadow-sm transition"
+              className="flex items-center gap-2 px-4 py-2 bg-rose-600 hover:bg-rose-700 dark:bg-rose-500 dark:hover:bg-rose-600 text-white rounded-lg text-xs font-semibold shadow-sm transition"
               id="reconect-key-btn"
             >
               <RefreshCw className="w-3.5 h-3.5" />
@@ -221,12 +221,12 @@ Ground truth portfolio data has been securely loaded into my system instructions
                     className={`flex gap-3 max-w-[85%] ${msg.role === "user" ? "ml-auto flex-row-reverse" : "mr-auto"}`}
                     id={`chat-message-${msg.role}-${index}`}
                   >
-                    <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center shadow-xs ${
+                    <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center shadow-xs transition-colors ${
                       msg.role === "user" 
-                        ? "bg-slate-200 text-slate-700" 
+                        ? "bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200" 
                         : msg.isError 
-                          ? "bg-rose-50 border border-rose-200 text-rose-600" 
-                          : "bg-rose-50 border border-rose-100 text-rose-700"
+                          ? "bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 text-rose-600 dark:text-rose-400" 
+                          : "bg-rose-50 dark:bg-rose-900/40 border border-rose-100 dark:border-rose-800/50 text-rose-700 dark:text-rose-300"
                     }`}>
                       {msg.role === "user" ? (
                         <User className="w-4 h-4" />
@@ -235,15 +235,15 @@ Ground truth portfolio data has been securely loaded into my system instructions
                       )}
                     </div>
 
-                    <div className={`rounded-2xl px-4 py-2.5 leading-relaxed text-slate-800 border ${
+                    <div className={`rounded-2xl px-4 py-2.5 leading-relaxed text-slate-800 dark:text-slate-200 border transition-colors ${
                       msg.role === "user"
-                        ? "bg-rose-600/5 text-slate-850 border-rose-100 rounded-tr-none"
+                        ? "bg-rose-600/5 dark:bg-rose-500/10 text-slate-850 dark:text-slate-100 border-rose-100 dark:border-rose-800/50 rounded-tr-none"
                         : msg.isError
-                          ? "bg-rose-50/50 border-rose-100 rounded-tl-none text-rose-850"
-                          : "bg-white border-slate-100 rounded-tl-none shadow-xs"
+                          ? "bg-rose-50/50 dark:bg-rose-950/20 border-rose-100 dark:border-rose-900/50 rounded-tl-none text-rose-850 dark:text-rose-300"
+                          : "bg-white dark:bg-slate-800 border-slate-100 dark:border-slate-700 rounded-tl-none shadow-xs"
                     }`}>
                       {/* Parse markdown styling */}
-                      <div className="space-y-2 whitespace-pre-wrap text-sm break-words prose-slate">
+                      <div className="space-y-2 whitespace-pre-wrap text-sm break-words prose-slate dark:prose-invert">
                         {msg.text.split("\n\n").map((para, pIdx) => {
                           if (para.startsWith("- ") || para.startsWith("* ")) {
                             const items = para.split(/\n[-*]\s+/);
@@ -254,7 +254,7 @@ Ground truth portfolio data has been securely loaded into my system instructions
                                     return null;
                                   }
                                   return (
-                                    <li key={iIdx} className="text-slate-700">
+                                    <li key={iIdx} className="text-slate-700 dark:text-slate-300">
                                       {renderInlineMarkdown(item)}
                                     </li>
                                   );
@@ -264,7 +264,7 @@ Ground truth portfolio data has been securely loaded into my system instructions
                           }
                           
                           return (
-                            <p key={pIdx} className="text-slate-700">
+                            <p key={pIdx} className="text-slate-700 dark:text-slate-300">
                               {renderInlineMarkdown(para)}
                             </p>
                           );
@@ -275,8 +275,8 @@ Ground truth portfolio data has been securely loaded into my system instructions
 
                   {/* Integrate sample questions inside the first message chat flow */}
                   {index === 0 && (msg.id === "welcome" || msg.id === "welcome-reset") && (
-                    <div className="flex flex-col gap-2 pl-10 pr-4 pt-1 pb-4" id="chat-suggestions-panel">
-                      <div className="flex items-center gap-1.5 mb-1 text-slate-400">
+                     <div className="flex flex-col gap-2 pl-10 pr-4 pt-1 pb-4" id="chat-suggestions-panel">
+                      <div className="flex items-center gap-1.5 mb-1 text-slate-400 dark:text-slate-500">
                         <HelpCircle className="w-3.5 h-3.5" />
                         <span className="text-[10.5px] font-bold uppercase tracking-wider font-mono">Suggested Questions</span>
                       </div>
@@ -286,7 +286,7 @@ Ground truth portfolio data has been securely loaded into my system instructions
                             key={qaIdx}
                             onClick={() => handleSendMessage(qa.question)}
                             disabled={isLoading}
-                            className="text-left text-[13px] bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-300 transition text-slate-700 py-2 px-3 rounded-xl shadow-xs max-w-full leading-snug break-words"
+                            className="text-left text-[13px] bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-rose-900/30 border border-slate-200 dark:border-slate-700 hover:border-rose-300 dark:hover:border-rose-700 transition text-slate-700 dark:text-slate-300 py-2 px-3 rounded-xl shadow-xs max-w-full leading-snug break-words"
                           >
                             {qa.question}
                           </button>
@@ -299,12 +299,12 @@ Ground truth portfolio data has been securely loaded into my system instructions
 
               {isLoading && (
                 <div className="flex gap-3 max-w-[80%] mr-auto" id="chat-typing-loader">
-                  <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-rose-50 border border-rose-100 text-rose-700 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-rose-50 dark:bg-rose-900/40 border border-rose-100 dark:border-rose-800/50 text-rose-700 dark:text-rose-400 flex items-center justify-center transition-colors">
                     <Bot className="w-4 h-4" />
                   </div>
-                  <div className="bg-white border border-slate-100 rounded-2xl rounded-tl-none px-4 py-3 shadow-xs space-y-1">
-                    <div className="flex items-center gap-2 text-xs font-medium text-slate-400">
-                      <Loader2 className="w-3.5 h-3.5 animate-spin text-rose-500" />
+                  <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl rounded-tl-none px-4 py-3 shadow-xs space-y-1 transition-colors">
+                    <div className="flex items-center gap-2 text-xs font-medium text-slate-400 dark:text-slate-500">
+                      <Loader2 className="w-3.5 h-3.5 animate-spin text-rose-500 dark:text-rose-400" />
                       <span>Copilot is searching index...</span>
                     </div>
                   </div>
@@ -317,7 +317,7 @@ Ground truth portfolio data has been securely loaded into my system instructions
         )}
 
         {/* Input Bar */}
-        <div className="p-4 bg-white border-t border-slate-100" id="chat-input-bar">
+        <div className="p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors" id="chat-input-bar">
           <div className="relative flex items-center">
             <input
               type="text"
@@ -332,14 +332,14 @@ Ground truth portfolio data has been securely loaded into my system instructions
                      ? "Listening..."
                      : "Ask about Kartikey's skills, BITS GPA, projects..."
               }
-              className="w-full pl-4 pr-24 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition duration-200 disabled:opacity-50 text-slate-800 placeholder-slate-400 font-sans"
+              className="w-full pl-4 pr-24 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:bg-white dark:focus:bg-slate-900 focus:outline-none focus:border-rose-500 dark:focus:border-rose-500 focus:ring-1 focus:ring-rose-500 dark:focus:ring-rose-500 transition duration-200 disabled:opacity-50 text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 font-sans"
               id="message-input-field"
             />
             <div className="absolute right-2 flex items-center gap-1">
               <button
                 onClick={handleSpeech}
                 disabled={isLoading || errorMessage === "GEMINI_KEY_MISSING"}
-                className={`p-2 rounded-lg transition ${isListening ? 'bg-rose-100 text-rose-600 animate-pulse' : 'hover:bg-slate-200 text-slate-500'}`}
+                className={`p-2 rounded-lg transition ${isListening ? 'bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 animate-pulse' : 'hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400'}`}
                 title="Voice Command"
               >
                 <Mic className="w-3.5 h-3.5" />
@@ -347,14 +347,14 @@ Ground truth portfolio data has been securely loaded into my system instructions
               <button
                 onClick={() => handleSendMessage(inputValue)}
                 disabled={!inputValue.trim() || isLoading || errorMessage === "GEMINI_KEY_MISSING"}
-                className="p-2 bg-rose-600 hover:bg-rose-700 disabled:bg-slate-200 text-white disabled:text-slate-400 rounded-lg transition"
+                className="p-2 bg-rose-600 hover:bg-rose-700 disabled:bg-slate-200 dark:bg-rose-600 dark:hover:bg-rose-500 dark:disabled:bg-slate-700 text-white disabled:text-slate-400 dark:disabled:text-slate-500 rounded-lg transition"
                 id="send-message-btn"
               >
                 <Send className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
-          <p className="text-[10px] text-slate-400 mt-2 font-light text-center font-sans">
+          <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-2 font-light text-center font-sans">
             AI responses are strictly grounded in Kartikey's records. Hallucinations are guarded.
           </p>
         </div>
@@ -375,7 +375,7 @@ function renderInlineMarkdown(text) {
     if (prevText) parts.push(prevText);
     
     parts.push(
-      <strong key={match.index} className="font-bold text-slate-950 font-sans">
+      <strong key={match.index} className="font-bold text-slate-950 dark:text-slate-100 font-sans">
         {match[1]}
       </strong>
     );
