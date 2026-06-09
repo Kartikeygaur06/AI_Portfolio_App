@@ -200,7 +200,7 @@ export function ProjectsSection({ data }) {
               </div>
             </div>
 
-            <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 line-clamp-3 leading-relaxed flex-grow">
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 whitespace-pre-wrap leading-relaxed flex-grow">
               {proj.description}
             </p>
 

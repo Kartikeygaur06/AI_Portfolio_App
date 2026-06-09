@@ -24,23 +24,26 @@ export const portfolioData = {
   ],
   projects: [
     {
-      title: "Basic AI Chatbot for ACM",
+      title: "AI Chatbot for ACM",
       role: "Developer",
-      duration: "Upcoming/Recent",
-      technologies: ["AI", "Chatbot"],
-      description: "Developed a basic AI chatbot designed for ACM club inductions.",
+      duration: "Recent",
+      technologies: ["AI", "LLMs", "LangChain", "Web Tech"],
+      description: "Problem: ACM inductions face a high volume of repetitive queries, and standard LLMs often hallucinate false club policies.\n\nSolution: Developed a context-aware AI chatbot using LangChain with strict grounding instructions to process induction queries, completely eliminating hallucinations and automating the FAQ process.",
       achievements: [
-        "A bot that gave answer to every possible questions without hallucinations."
+        "Engineered an accurate bot that reliably answered every possible induction-related question.",
+        "Implemented robust grounding and system instruction techniques to completely eliminate AI hallucinations.",
+        "Created an accessible and highly responsive interface for seamless conversational user experiences."
       ]
     },
     {
-      title: "Swarm Robotics Project",
+      title: "Decentralized Swarm Robotics",
       role: "Researcher / Developer",
       duration: "Upcoming",
-      technologies: ["Robotics", "Swarm Intelligence"],
-      description: "An upcoming project exploring swarm robotics under the guidance of Prof. Aritra Mukherjee.",
+      technologies: ["Robotics", "Swarm Intelligence", "Path Planning"],
+      description: "Problem: Traditional swarm systems rely on a central controller, creating a single point of failure and limiting scalability for tasks like dynamic crowd control.\n\nSolution: Designing an autonomous, decentralized grid-based navigation system where multiple independent agents adjust their motion purely based on the real-time positioning of neighboring peers.",
       achievements: [
-        "Researching state-of-the-art algorithms for coordinated multi-agent robot behavior."
+        "Designing grid-based navigation where individual agents autonomously adjust their motion based on the real-time positioning of neighboring peers.",
+        "Researching algorithms for decentralized coordination to handle complex dynamic environments, under the guidance of Prof. Aritra Mukherjee."
       ]
     }
   ],
